@@ -3,6 +3,7 @@ import router from './routes'
 import session from 'express-session'
 import { PrismaSessionStore } from '@quixo3/prisma-session-store'
 import { PrismaClient } from '@prisma/client'
+import cors from 'cors'
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -12,6 +13,7 @@ app.use((req, res, next) => {
 	res.header('Cross-Origin-Opener-Policy', 'same-origin')
 	next()
 })
+app.use(cors())
 app.use(
 	session({
 		secret: process.env.COOKIE_SECRET!,
