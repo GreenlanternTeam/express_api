@@ -18,7 +18,10 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
 });
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: true,
+    credentials: true
+}));
 app.use((0, express_session_1.default)({
     secret: process.env.COOKIE_SECRET,
     resave: false,
