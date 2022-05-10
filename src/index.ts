@@ -12,6 +12,7 @@ app.use((req, res, next) => {
 	res.header('Cross-Origin-Embedder-Policy', '*')
 	res.header('Cross-Origin-Opener-Policy', '*')
 	res.header('Access-Control-Allow-Origin', '*')
+	res.header('Access-Control-Allow-Credentials', '*')
 	next()
 })
 app.use(
