@@ -13,8 +13,9 @@ const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
 const prisma = new client_1.PrismaClient();
 app.use((req, res, next) => {
-    res.header('Cross-Origin-Embedder-Policy', 'require-corp');
-    res.header('Cross-Origin-Opener-Policy', 'same-origin');
+    // res.header('Cross-Origin-Embedder-Policy', '*')
+    // res.header('Cross-Origin-Opener-Policy', '*')
+    res.header('Access-Control-Allow-Origin', '*');
     next();
 });
 app.use((0, cors_1.default)());
