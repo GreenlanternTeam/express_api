@@ -9,8 +9,8 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const prisma = new PrismaClient()
 app.use((req, res, next) => {
-	// res.header('Cross-Origin-Embedder-Policy', '*')
-	// res.header('Cross-Origin-Opener-Policy', '*')
+	res.header('Cross-Origin-Embedder-Policy', '*')
+	res.header('Cross-Origin-Opener-Policy', '*')
 	res.header('Access-Control-Allow-Origin', '*')
 	next()
 })
